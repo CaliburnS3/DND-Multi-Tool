@@ -96,7 +96,10 @@ import javax.swing.JPanel;
 
 public class GUI extends JPanel implements ActionListener {
     public static JFrame frame;
+
+
     public static ArrayList buttons = new ArrayList();
+    public static ArrayList frames = new ArrayList();
 
     static String[] args = {};
 

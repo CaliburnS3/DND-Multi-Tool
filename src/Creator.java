@@ -72,16 +72,37 @@ public class Creator extends JPanel implements ActionListener {
 
 
     public Creator(){
-        frame = new JFrame("GUI");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame = new JFrame("Creator");
+        frame.setLocation(120, 0);
+
+
+        JButton trueRand = new JButton("Random");
+        trueRand.setBounds(0, 0, 120, 30);
+        trueRand.addActionListener(e -> trueRand());
 
 
 
         //Display the window.
+        frame.add(trueRand);
+
         frame.setSize(120, 250);
         frame.setLayout(null);
         frame.setVisible(true);
         frame.getContentPane().setBackground(Color.GRAY);
+    }
+
+    private void trueRand(){
+        SwingWorker myWorker= new SwingWorker<String, Void>() {
+            @Override
+            protected String doInBackground() throws Exception {
+                //Execute your logic
+                SheetBuilder.main(args);
+               SheetBuilder.createStats(10,10);
+
+                return null;
+            }
+        };
+        myWorker.execute();
     }
 
     public void actionPerformed(ActionEvent evt) {
