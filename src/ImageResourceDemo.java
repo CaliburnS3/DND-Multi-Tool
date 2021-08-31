@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
 import javax.imageio.*;
-import java.net.URL;
 
 public final class ImageResourceDemo {
     private static BufferedImage bi;
@@ -28,7 +27,7 @@ public final class ImageResourceDemo {
 
     private static void loadImage() throws IOException{
         bi = ImageIO.read(
-                ImageResourceDemo.class.getResource("sheet.jpeg"));
+                ImageResourceDemo.class.getResource("CharacterSheets/BaseSheet.jpeg"));
 
     }
 
